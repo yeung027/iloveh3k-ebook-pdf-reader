@@ -1,6 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import "./index.css";
 import CloudPdfViewer from "@cloudpdf/viewer";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from "@vercel/speed-insights/react"
+
 export default function App() {
   const viewer = useRef(null);
   useEffect(() => {
@@ -15,6 +18,8 @@ export default function App() {
   return (
     <div className="app">
       <div className="viewer" ref={viewer}></div>
+      <Analytics />
+      <SpeedInsights />
     </div>
   );
 }
